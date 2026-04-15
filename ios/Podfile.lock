@@ -1161,9 +1161,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-zyprotectabio-module (1.1.6):
+  - react-native-zyprotectabio-module (1.1.7):
     - React-Core
-    - zy_multicompany_bio_lib_ios_protecta (= 1.0.2)
+    - zy_multicompany_bio_lib_ios_protecta (= 1.0.3)
   - React-nativeconfig (0.74.3)
   - React-NativeModulesApple (0.74.3):
     - glog
@@ -1476,7 +1476,7 @@ PODS:
     - "sqlite3/common (= 3.45.3+1)"
   - "sqlite3/common (3.45.3+1)"
   - Yoga (0.0.0)
-  - zy_lib_face_ios_protecta (6.2.4):
+  - zy_lib_face_ios_protecta (6.2.6):
     - zyFaceLiveness (= 6.3.3)
     - zyIdentyFace (= 6.3.4)
     - zyIdentyFaceIcaoLocal (= 6.3.3)
@@ -1485,10 +1485,10 @@ PODS:
     - DocumentReader (= 8.3.5107)
     - DocumentReaderFullAuth (= 8.3.14119)
   - zy_lib_zytrust_pdv_ios (0.2.1)
-  - zy_multicompany_bio_lib_ios_protecta (1.0.2):
+  - zy_multicompany_bio_lib_ios_protecta (1.0.3):
     - CryptoSwift (~> 1.3.3)
     - JWTDecode (= 3.1.0)
-    - zy_lib_face_ios_protecta (= 6.2.4)
+    - zy_lib_face_ios_protecta (= 6.2.6)
     - zy_lib_regula_ocr_ios (= 0.5.5)
     - zy_lib_zytrust_pdv_ios (= 0.2.1)
     - zy_multicompany_lib_ui_ios_protecta (= 1.0.1)
@@ -1593,6 +1593,15 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+  - "zy_lib_face_ios_protecta (from `https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git`, tag `6.2.6`)"
+  - "zy_lib_regula_ocr_ios (from `https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_regula_ocr_ios.git`, tag `0.5.5`)"
+  - "zy_lib_zytrust_pdv_ios (from `https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_zytrust_pdv_ios.git`, tag `0.2.1`)"
+  - "zy_multicompany_bio_lib_ios_protecta (from `https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git`, tag `1.0.3`)"
+  - "zy_multicompany_lib_ui_ios_protecta (from `https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git`, tag `1.0.1`)"
+  - "zyFaceLiveness (from `https://ZYTRUST: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@github.com/ZYTRUST/FaceLiveness.git`, tag `6.3.3`)"
+  - "zyIdentyFace (from `https://ZYTRUST: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@github.com/ZYTRUST/IdentyFace.git`, tag `6.3.4`)"
+  - "zyIdentyFaceIcaoLocal (from `https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceIcaoLocal.git`, tag `6.3.3`)"
+  - "zyIdentyFaceLocal (from `https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceLocal.git`, tag `6.3.3`)"
 
 SPEC REPOS:
   trunk:
@@ -1614,15 +1623,6 @@ SPEC REPOS:
     - RegulaCommon
     - SocketRocket
     - sqlite3
-    - zy_lib_face_ios_protecta
-    - zy_lib_regula_ocr_ios
-    - zy_lib_zytrust_pdv_ios
-    - zy_multicompany_bio_lib_ios_protecta
-    - zy_multicompany_lib_ui_ios_protecta
-    - zyFaceLiveness
-    - zyIdentyFace
-    - zyIdentyFaceIcaoLocal
-    - zyIdentyFaceLocal
 
 EXTERNAL SOURCES:
   boost:
@@ -1800,6 +1800,62 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
+  zy_lib_face_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git"
+    :tag: 6.2.6
+  zy_lib_regula_ocr_ios:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_regula_ocr_ios.git"
+    :tag: 0.5.5
+  zy_lib_zytrust_pdv_ios:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_zytrust_pdv_ios.git"
+    :tag: 0.2.1
+  zy_multicompany_bio_lib_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git"
+    :tag: 1.0.3
+  zy_multicompany_lib_ui_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git"
+    :tag: 1.0.1
+  zyFaceLiveness:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/FaceLiveness.git"
+    :tag: 6.3.3
+  zyIdentyFace:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFace.git"
+    :tag: 6.3.4
+  zyIdentyFaceIcaoLocal:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceIcaoLocal.git"
+    :tag: 6.3.3
+  zyIdentyFaceLocal:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceLocal.git"
+    :tag: 6.3.3
+
+CHECKOUT OPTIONS:
+  zy_lib_face_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git"
+    :tag: 6.2.6
+  zy_lib_regula_ocr_ios:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_regula_ocr_ios.git"
+    :tag: 0.5.5
+  zy_lib_zytrust_pdv_ios:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_zytrust_pdv_ios.git"
+    :tag: 0.2.1
+  zy_multicompany_bio_lib_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git"
+    :tag: 1.0.3
+  zy_multicompany_lib_ui_ios_protecta:
+    :git: "https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git"
+    :tag: 1.0.1
+  zyFaceLiveness:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/FaceLiveness.git"
+    :tag: 6.3.3
+  zyIdentyFace:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFace.git"
+    :tag: 6.3.4
+  zyIdentyFaceIcaoLocal:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceIcaoLocal.git"
+    :tag: 6.3.3
+  zyIdentyFaceLocal:
+    :git: "https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceLocal.git"
+    :tag: 6.3.3
 
 SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
@@ -1843,7 +1899,7 @@ SPEC CHECKSUMS:
   lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
+  RCT-Folly: 5dc73daec3476616d19e8a53f0156176f7b55461
   RCTDeprecation: 4c7eeb42be0b2e95195563c49be08d0b839d22b4
   RCTRequired: d530a0f489699c8500e944fde963102c42dcd0c2
   RCTTypeSafety: b20878506b094fa3d9007d7b9e4be0faa3562499
@@ -1871,7 +1927,7 @@ SPEC CHECKSUMS:
   react-native-netinfo: 2e3c27627db7d49ba412bfab25834e679db41e21
   react-native-safe-area-context: df9763c5de6fa38883028e243a0b60123acb8858
   react-native-webview: a4483a25c71098e407df1c1d9056ab907647d7c7
-  react-native-zyprotectabio-module: 671ca05d71160d60680c3a694a3696b6d252cc3a
+  react-native-zyprotectabio-module: ee1811959217c5ba8d68763b2a607dea31313831
   React-nativeconfig: fa5de9d8f4dbd5917358f8ad3ad1e08762f01dcb
   React-NativeModulesApple: 714d4a6ea3c580c31b25ad01f9650b259fad9818
   React-perflogger: 7bb9ba49435ff66b666e7966ee10082508a203e8
@@ -1907,16 +1963,16 @@ SPEC CHECKSUMS:
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   sqlite3: 02d1f07eaaa01f80a1c16b4b31dfcbb3345ee01a
   Yoga: 04f1db30bb810187397fa4c37dd1868a27af229c
-  zy_lib_face_ios_protecta: 00afa69f7732ceab55a9c1bc9bd8156870727f38
+  zy_lib_face_ios_protecta: b73cd87843d65f3db1810e4dea833b351b044d71
   zy_lib_regula_ocr_ios: ed9b06ab225774991fe855bfd58625cd6dee4c30
   zy_lib_zytrust_pdv_ios: 94d0d0e29cabd2bf65c871d53d80f065bd4370ef
-  zy_multicompany_bio_lib_ios_protecta: 106b38a5911ea3d1f85c60a0dd7f05b63bec9e4b
+  zy_multicompany_bio_lib_ios_protecta: 73b1c44787a38a5cdc4bf7272eea866e4406ccc6
   zy_multicompany_lib_ui_ios_protecta: 89ed53f544d61a7314b8eb30ddd8c6362c8283b4
   zyFaceLiveness: 0af6d18a42a12b75377dd87a90a3e2cfc25be647
   zyIdentyFace: ef4cb44c12f11a2eadea2af83ed54171b466b139
   zyIdentyFaceIcaoLocal: f9de7e255d8e96811edd387c9b271b8750147d7a
   zyIdentyFaceLocal: 3c510462dcc2f656af65fb7cc370bc2a77fd032d
 
-PODFILE CHECKSUM: 50345967021ac2113e06fcb95261a7fbf8b4bea1
+PODFILE CHECKSUM: a2353f4c613f02df53c0fe479f52ca1463e2f4f8
 
 COCOAPODS: 1.16.2
