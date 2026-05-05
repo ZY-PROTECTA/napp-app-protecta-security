@@ -43,8 +43,8 @@ target 'nappappprotectasecurity' do
   config = use_native_modules!
 
   # --- REPOSITORIOS PRIVADOS ---
-  pod 'zy_multicompany_bio_lib_ios_protecta', :git => 'https://ZY-PROTECTA:GITHUB_TOKEN@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git', :tag => '1.0.4'
-  pod 'zy_multicompany_lib_ui_ios_protecta', :git => 'https://ZY-PROTECTA:GITHUB_TOKEN@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git', :tag => '1.0.4' 
+  pod 'zy_multicompany_bio_lib_ios_protecta', :git => 'https://ZY-PROTECTA:GITHUB_TOKEN@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git', :tag => '1.0.5'
+  pod 'zy_multicompany_lib_ui_ios_protecta', :git => 'https://ZY-PROTECTA:GITHUB_TOKEN@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git', :tag => '1.0.1' 
   pod 'zy_lib_face_ios_protecta', :git => 'https://ZY-PROTECTA:GITHUB_TOKEN@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git', :tag => '6.2.6' 
   pod 'zyIdentyFace', :git => 'https://ZYTRUST:GITHUB_TOKEN@github.com/ZYTRUST/IdentyFace.git', :tag => '6.3.4' 
   pod 'zyFaceLiveness', :git => 'https://ZYTRUST:GITHUB_TOKEN@github.com/ZYTRUST/FaceLiveness.git', :tag => '6.3.3' 
