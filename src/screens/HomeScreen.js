@@ -17,16 +17,18 @@ export default function HomeScreen() {
   /* =========================
    * STATE
    * ========================= */
-  const [coError, setCoError] = useState('');
+  const [codError, setCodError] = useState('');
   const [deError, setDeError] = useState('');
+  const [codBioError, setCodBioError] = useState('');
+  const [deBioError, setDeBioError] = useState('');
   const [coErrorButton, setCoErrorButton] = useState('');
   const [deErrorButton, setDeErrorButton] = useState('');
   const [idSolicitud, setIdSolicitud] = useState('');
 
   const [tiDocumento, setTiDocumento] = useState('');
   const [nuDocumento, setNuDocumento] = useState('');
-  const [tipoOperacion, setTipoOperacion] = useState('');
-  const [ambiente, setAmbiente] = useState('');
+  const [idFlujo, setIdFlujo] = useState(0);
+  const [ambiente, setAmbiente] = useState('DEVX');
   const [token, setToken] = useState('');
   const [manualToken, setManualToken] = useState('');
 
@@ -63,17 +65,17 @@ export default function HomeScreen() {
 
       switch (ambiente) {
         case 'DEV2':
-          resolvedToken = '';
+          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJKU0FFTloyQFpZVFJVU1QuQ09NIiwidXN1U3VjSWQiOjQ1NTEsInVzdUVtcHNJZCI6OTc4LCJ1c3VBcGxJZCI6MCwidXNlcl9uYW1lIjoiREVTQS1QVEEtU1EzLUFQSS1MTSIsInR1c3VJZCI6MSwidmVyc2lvbiI6IjIuMCIsInVzdUNvSW50ZXJubyI6IkRFU0EtUFRBLVNRMy1BUEktTE0iLCJhdXRob3JpdGllcyI6WyJ4MEY0TTI0eG9ZcXVYTkhlSFhMLzBCMDBDbnc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsIjZJb0ZHQU9SSDNHcGUxYmlqdlB4MDY1bVlZUT0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9Iiwick5ia3FvTDBSMlc4MysveDRaUUV4eUd1cXVBPSIsImFyclJjanorY3M1N3hNV1VLVndNN2lPayt5dz0iLCJ5NXQ5V0ZUaTcvUmFvK1lPTmI0YnJ4d0NhRWs9IiwiYlpoNUlGNXdHK0EzQ3Zxc1ZnT2VRN0FZd3U4PSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjo2MTc4LCJ1c3VQZXJJZCI6MCwic2NvcGUiOlsidHJ1c3QiLCJyZWFkIiwid3JpdGUiXSwidGlEb2NVc3VhcmlvIjo2LCJudURvY1VzdWFyaW8iOiIwMDAwMDAwMDAwIiwic3VjdURlc2NyaXBjaW9uIjoiUFJJTkNJUEFMIiwiZXhwIjoxOTI2NTE1NTYzLCJzdWN1Q29kaWdvIjoiMSIsImp0aSI6Ik1SZEVYcHdfMGVybWNjYlQ5SzE5MjBrOENwWSJ9.MPysi1AoZvGafN4cPTPiLIaCRFLKWJAFUrgYL7OQ5Pzv-_kUhxnqIsDlgnbgOPdTmrAko1YWLHpceqVDuwWOIFGWDN-Fkowo0NPupOXDbbQslppoY0Svgnflzx_02pfRV9Zbtfwx_D6cdTSWeeEjIMO4IoTvjsXobsD2OLwla3tw6d7pxUIRvvJdu07das2GO95cnQVrR5TAA_YW_mPgGWmSrqGB8schJp2kjgOocTb7dZh7oguNDGl3J4u9TsdYcjb9iZWlrmolV2lWqmoisWInVP24P27A1Sc0o431FFJbxH3zltxG1aT3Ftu58LxEUwC7ruA7cqgKUs8ZYsEo7w';
           break;
         case 'DEVX':
-          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJQUlVFQkEwMDJAWllUUlVTVC5DT00iLCJ1c3VTdWNJZCI6NDY2LCJ1c3VFbXBzSWQiOjY2LCJ1c3VBcGxJZCI6MSwidXNlcl9uYW1lIjoiREVWWC1QVEEtQ0wtQVBJLUxNIiwidHVzdUlkIjoxLCJ2ZXJzaW9uIjoiMi4wIiwidXN1Q29JbnRlcm5vIjoiREVWWC1QVEEtQ0wtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiU0ttYkJPZC9lY2hLc1k4a3hwY3h5dklkb1hFPSIsIkpoUEV2bk5qRjhiMFg3bXYwTXY0VVlqVVhndz0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjo1OTg0LCJ1c3VQZXJJZCI6MTcxMzksInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il0sInRpRG9jVXN1YXJpbyI6MSwibnVEb2NVc3VhcmlvIjoiODQ1NjExNTYiLCJzdWN1RGVzY3JpcGNpb24iOiJQUklOQ0lQQUwiLCJleHAiOjE5MjcxMzI5NzIsInN1Y3VDb2RpZ28iOiIxIiwianRpIjoidkU4RGQ1TVFkNU9VVW9wdVp1cWxjWUR5V0JzIn0.KoDJxkmDBISK3DGhXhX1FVzsGjQpc5sj9-d4SUwe26DTPcKEBmGLPwErLDDnoxoj8WtVYd6u32eDymVUzg61pAYNwQqV5sQyhTqiMIqkdlK23Gvr08vTLcSDKpRDrYB980RMN0DAXcpNyg3ge1GRMvbL9x4vQ_9xWCJAW9zCHybvavKbeU1EE4p9Mf4SsxLDidhGqfeeJVxhLI9ByViJ-P3woH1Yhf3cYJgPBYsUpKUVgZUgs46SQ7uJB0MbEvz90JB4xv49sCIJL2b2qm5PtiM2T4ac8XFho_q3HP_30DTty-GyGSkZR7MraCkMn_lTNz7ed5tNyLVp7UJ5Vy0yXw';
+          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJQUlVFQkEwMDJAWllUUlVTVC5DT00iLCJ1c3VTdWNJZCI6NDc1LCJ1c3VFbXBzSWQiOjY2LCJ1c3VBcGxJZCI6MSwidXNlcl9uYW1lIjoiREVWWC1QVEEtQ0wtQVBJLUxNIiwidHVzdUlkIjoxLCJ2ZXJzaW9uIjoiMi4wIiwidXN1Q29JbnRlcm5vIjoiREVWWC1QVEEtQ0wtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiU0ttYkJPZC9lY2hLc1k4a3hwY3h5dklkb1hFPSIsIkpoUEV2bk5qRjhiMFg3bXYwTXY0VVlqVVhndz0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjo1OTg0LCJ1c3VQZXJJZCI6MTcxMzksInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il0sInRpRG9jVXN1YXJpbyI6MSwibnVEb2NVc3VhcmlvIjoiODQ1NjExNTYiLCJzdWN1RGVzY3JpcGNpb24iOiJBUExJQ0FUSVZPIiwiZXhwIjoxOTM0NTcwNDA2LCJzdWN1Q29kaWdvIjoiMSIsImp0aSI6Ijl4d3llWkJQWVFPVkt5QlNsMjFMRFRqbDBIOCJ9.p-gVgknA9MMYeYAvsL4qoSzebdlfSZOmubnKBkrTYMtGxqRrmBzcfeIWAJJBPus0AxEgL4BWpJJjGNtCA1u8XFHOvIsw3qH2-AnIKIStIEM1hF75NewErRWnhd9dK8o1Qo10XKs-7MseA4isUfYvBz4oywHt0T15S_EJy3vS4c0HQVf2dtvpfp1LthR-UBs1ykw5iNWdhSsSsqf3g9L8gJNwcaIax64wsdToJzBk0W-AjIY-NueJo_lSNvXMMLzxigoUfnkM6cZieFiCISpIjuJfqzU6GLz4ITQG2B9y8Ut8vBXsFifQT9XKYvioup2bmjSNDSgidA4bxClc64AVEQ';
           break;
         case 'SIGN':
           resolvedToken = '';
           break;
         case 'POC':
         default:
-          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJBTUVORE9aQUBaWVRSVVNULkNPTSIsInVzdVN1Y0lkIjoxOTIsInVzdUVtcHNJZCI6NzgsInVzdUFwbElkIjoxLCJ1c2VyX25hbWUiOiJQT0MtUFRBLUNMLUFQSS1MTSIsInR1c3VJZCI6MSwidmVyc2lvbiI6IjIuMCIsInVzdUNvSW50ZXJubyI6IlBPQy1QVEEtQ0wtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjoyMDQzLCJ1c3VQZXJJZCI6NzYzMiwic2NvcGUiOlsicmVhZCIsIndyaXRlIiwidHJ1c3QiXSwidGlEb2NVc3VhcmlvIjoxLCJudURvY1VzdWFyaW8iOiI4NDU2MTE1NiIsInN1Y3VEZXNjcmlwY2lvbiI6IlBSSU5DSVBBTCIsImV4cCI6MTkyNjg1NTU4Niwic3VjdUNvZGlnbyI6IjEiLCJqdGkiOiJ0LV9mR0ZiQ3BjcllpSkNMOGtlZC1FcmVCZ1kifQ.HmAu4oK7pj4FK18i65uF3pL_N_Wh9hqmt-BmjnUWZyaF0Cb9Erkak7-BtIkaHjp4ZXs2pRB5Dj3C8qSdD22f9oZS6tiEe7G8DlUnvotRsGoyGskEPtZSNBNndeEDnvbIWwlG7XZ-6JFVYpeym5T14AMQKSBszkXkgTg03dGdXnA6-aLgK-LXkFAbYyPz6yWSHdVNYOPkhTi39CGIH1DO0ZTpNzUfQ-5RoFqP6wSPAXVA-0aaSGHjVyIb_N8HPbdisOrsf7NTxJPbfvbDwI6dNw0zP_LNvDkWStb-NUGiOGjK0mglFs6u1fXYEsea8IqLR1FcvDEjYtaFz9Y26cgorg';
+          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJTQURTQURTQURAWllUUlVTVC5DT00iLCJ1c3VTdWNJZCI6MTkyLCJ1c3VFbXBzSWQiOjc4LCJ1c3VBcGxJZCI6MSwidXNlcl9uYW1lIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwidHVzdUlkIjoxLCJ2ZXJzaW9uIjoiMi4wIiwidXN1Q29JbnRlcm5vIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjoyMDQyLCJ1c3VQZXJJZCI6NzYzMSwic2NvcGUiOlsicmVhZCIsIndyaXRlIiwidHJ1c3QiXSwidGlEb2NVc3VhcmlvIjoxLCJudURvY1VzdWFyaW8iOiI2NjE1NjE1MSIsInN1Y3VEZXNjcmlwY2lvbiI6IlBSSU5DSVBBTCIsImV4cCI6MTkyNjI1NDU1Nywic3VjdUNvZGlnbyI6IjEiLCJqdGkiOiJWQTV4RWh1UzY0R0FlZ2ZHRjBqNDJ6Ujc0X2cifQ.A8vk1SeQEnyXL2WHJaWJYItoxGI-Fw76HbkdNgqcvWxsazBeguH9drvhSnCiEID3vw0PeSplwXPdN4WhHIPWOqTRpovdmMS4pMmwTUEJA7BOIcg4my4HEO7g1BJLe1z2OCiek-xoLx-zoe5K5AlHeLyuAfguvkem2H4Cm_3dbu3zq3q1O2Qb76TthR6XBp3B0GD9JfrfLHUQA2_n3rJI3QOECcSbqmyfljRn3K3nl_RZQroPkv5QC75lI8LL-49ZX7Yv3pfLfhtBuZgzfFYX62cg5Tc0ioyddFN1PZ-Go8FwGifopl92pFSA1V5LO6iV4nGQyjaqF5WZVt72urYjTA';
           break;
       }
 
@@ -91,7 +93,7 @@ export default function HomeScreen() {
         nuDocumento,// Número de documento
         accessToken: resolvedToken, // Access token generado por ambiente
         bioPais: 'PE', //Pais de verificacion (siempre PE)
-        tiOperacion: tipoOperacion, //Operacion
+        idFlujo: idFlujo, //Operacion
         urlSource: ambiente // Ambiente a la conexion DEV2 , POC , DEVX , SIGN (PRODUCCION)
       };
 
@@ -101,8 +103,10 @@ export default function HomeScreen() {
       /* =========================
        * RESULTADOS
        * ========================= */
-      setCoError(result?.coError ?? ''); //Codigo de resultado de WS de zytrust
+      setCodError(result?.codError ?? ''); //Codigo de resultado de WS de zytrust
       setDeError(result?.deError ?? ''); //Descripcion de resultado de WS de zytrust
+      setCodBioError(result?.codBioError ?? ''); //Codigo de resultado Biometrico de WS de zytrust
+      setDeBioError(result?.deBioError ?? ''); //Descripcion de resultado Biometrico de WS de zytrust
       setCoErrorButton(result?.coErrorButton ?? ''); //Codigo de Salida especial con selección de boton, ejemplo 9104
       setDeErrorButton(result?.deErrorButton ?? ''); //Descripcion de codigo de Salida especial con selección de boton, ejemplo 9104: El usuario canceló la operación
       setIdSolicitud(result?.idSolicitud ?? ''); //Id de la Solicitud
@@ -128,6 +132,8 @@ export default function HomeScreen() {
         resizeMode="contain"
       />
 
+      <Text style={styles.title}>{'SDK 1.1.14'}</Text>
+
       <TextInput
         style={styles.input}
         placeholder="Ingrese número de documento"
@@ -139,10 +145,11 @@ export default function HomeScreen() {
 
       <TextInput
         style={styles.input}
-        placeholder="Tipo Operación (FLUJO_FACIAL_MANUAL)"
-        value={tipoOperacion}
-        onChangeText={(text) => setTipoOperacion(text.toUpperCase())}
-        autoCapitalize="characters"
+        placeholder="Ingrese ID del flujo"
+        value={idFlujo}
+        onChangeText={setIdFlujo}
+        keyboardType="numeric"
+        maxLength={8}
       />
 
       <TextInput
@@ -166,8 +173,10 @@ export default function HomeScreen() {
       </TouchableOpacity>
 
       {/* RESULTADOS */}
-      <Text>{'coError: ' + coError}</Text>
+      <Text>{'codError: ' + codError}</Text>
       <Text>{'deError: ' + deError}</Text>
+      <Text>{'codBioError: ' + codBioError}</Text>
+      <Text>{'deBioError: ' + deBioError}</Text>
       <Text>{'coErrorButton: ' + coErrorButton}</Text>
       <Text>{'deErrorButton: ' + deErrorButton}</Text>
       <Text>{'idSolicitud: ' + idSolicitud}</Text>
@@ -183,6 +192,9 @@ export default function HomeScreen() {
  * STYLES
  * ========================= */
 const styles = StyleSheet.create({
+  title: {
+    marginBottom: 24
+  },
   container: {
     padding: 24,
     alignItems: 'center',
