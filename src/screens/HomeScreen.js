@@ -28,7 +28,7 @@ export default function HomeScreen() {
   const [tiDocumento, setTiDocumento] = useState('');
   const [nuDocumento, setNuDocumento] = useState('');
   const [idFlujo, setIdFlujo] = useState(0);
-  const [ambiente, setAmbiente] = useState('DEVX');
+  const [ambiente, setAmbiente] = useState('POC');
   const [token, setToken] = useState('');
   const [manualToken, setManualToken] = useState('');
 
@@ -75,7 +75,7 @@ export default function HomeScreen() {
           break;
         case 'POC':
         default:
-          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJTQURTQURTQURAWllUUlVTVC5DT00iLCJ1c3VTdWNJZCI6MTkyLCJ1c3VFbXBzSWQiOjc4LCJ1c3VBcGxJZCI6MSwidXNlcl9uYW1lIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwidHVzdUlkIjoxLCJ2ZXJzaW9uIjoiMi4wIiwidXN1Q29JbnRlcm5vIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjoyMDQyLCJ1c3VQZXJJZCI6NzYzMSwic2NvcGUiOlsicmVhZCIsIndyaXRlIiwidHJ1c3QiXSwidGlEb2NVc3VhcmlvIjoxLCJudURvY1VzdWFyaW8iOiI2NjE1NjE1MSIsInN1Y3VEZXNjcmlwY2lvbiI6IlBSSU5DSVBBTCIsImV4cCI6MTkyNjI1NDU1Nywic3VjdUNvZGlnbyI6IjEiLCJqdGkiOiJWQTV4RWh1UzY0R0FlZ2ZHRjBqNDJ6Ujc0X2cifQ.A8vk1SeQEnyXL2WHJaWJYItoxGI-Fw76HbkdNgqcvWxsazBeguH9drvhSnCiEID3vw0PeSplwXPdN4WhHIPWOqTRpovdmMS4pMmwTUEJA7BOIcg4my4HEO7g1BJLe1z2OCiek-xoLx-zoe5K5AlHeLyuAfguvkem2H4Cm_3dbu3zq3q1O2Qb76TthR6XBp3B0GD9JfrfLHUQA2_n3rJI3QOECcSbqmyfljRn3K3nl_RZQroPkv5QC75lI8LL-49ZX7Yv3pfLfhtBuZgzfFYX62cg5Tc0ioyddFN1PZ-Go8FwGifopl92pFSA1V5LO6iV4nGQyjaqF5WZVt72urYjTA';
+          resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJTQURTQURTQURAWllUUlVTVC5DT00iLCJ1c3VTdWNJZCI6MjAyLCJ1c3VFbXBzSWQiOjc4LCJ1c3VBcGxJZCI6MSwidXNlcl9uYW1lIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwidHVzdUlkIjoxLCJ2ZXJzaW9uIjoiMi4wIiwidXN1Q29JbnRlcm5vIjoiUE9DLVBUQS1TUTMtQVBJLUxNIiwiYXV0aG9yaXRpZXMiOlsia2g4OU9kdW9PZHBINWNqVG9rb2JoQXQxVkVBPSIsIngwRjRNMjR4b1lxdVhOSGVIWEwvMEIwMENudz0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9IiwiNklvRkdBT1JIM0dwZTFiaWp2UHgwNjVtWVlRPSIsInJOYmtxb0wwUjJXODMrL3g0WlFFeHlHdXF1QT0iLCJhcnJSY2p6K2NzNTd4TVdVS1Z3TTdpT2sreXc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsInk1dDlXRlRpNy9SYW8rWU9OYjRicnh3Q2FFaz0iLCJiWmg1SUY1d0crQTNDdnFzVmdPZVE3QVl3dTg9IiwiMm9TZ3JmdU9wbTB3QXpqNzhXbHA5eWoyQUJvPSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjoyMDQyLCJ1c3VQZXJJZCI6NzYzMSwic2NvcGUiOlsicmVhZCIsIndyaXRlIiwidHJ1c3QiXSwidGlEb2NVc3VhcmlvIjoxLCJudURvY1VzdWFyaW8iOiI2NjE1NjE1MSIsInN1Y3VEZXNjcmlwY2lvbiI6IkFQTElDQVRJVk8iLCJleHAiOjE5MzUxODcyNTIsInN1Y3VDb2RpZ28iOiIxIiwianRpIjoiVEZ1VzBfUmQ5SldaQnFRbU1LeEw2YThmZFNjIn0.jJ7jXZrXf4motptGNMEde5UN16L8ffZeeSeRhziDQWOFmQrV_s8RKYh0r1p3oXjud4O3RZtbA7cE6snhQcSve3_1mQPyhwhWqNnz9YISNiLbcgXBjA-vUhGGvBHj6uZU8HsNol1bTGvBI4h6SZTKdxvriogi5HdmA3o5D_O-n_IauKQ48VLDppQl9DKEqrPO09C_ynN7Rm8kTfv7Y7SyFRFYQ-U28a6CF10v8Xz6HiXCZ3O8q7zEqPW38iiI3fZHfQjOMCiiQpZjnfTe7cXBptR9daTQKpLgweq_lSVOAqQFPr4GpYPw16V4FgkxQwcCN5JpMk8xmQDp-lO-svYBGA';
           break;
       }
 
@@ -126,13 +126,13 @@ export default function HomeScreen() {
     <ScrollView contentContainerStyle={styles.container}>
       <Image
         source={{
-          uri: 'https://www.zytrust.com/wp-content/uploads/2022/08/logotipo-footer-zytrust.webp',
+          uri: 'https://devx.zytrust.com/BancaElectronicaPU/assets/img/icons/ZT_COLOR.png',
         }}
         style={styles.logo}
         resizeMode="contain"
       />
 
-      <Text style={styles.title}>{'SDK 1.1.14'}</Text>
+      <Text style={styles.title}>{'SDK 1.1.15'}</Text>
 
       <TextInput
         style={styles.input}
