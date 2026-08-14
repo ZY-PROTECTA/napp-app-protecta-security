@@ -43,16 +43,17 @@ target 'nappappprotectasecurity' do
   config = use_native_modules!
 
   # --- REPOSITORIOS PRIVADOS ---
-pod 'zy_multicompany_bio_lib_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git', :tag => '1.0.9'
-pod 'zy_multicompany_lib_ui_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git', :tag => '1.0.5' 
-pod 'zy_lib_face_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git', :tag => '6.2.8' 
-pod 'zyIdentyFace', :git => 'https://ZYTRUST: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@github.com/ZYTRUST/IdentyFace.git', :tag => '6.3.4' 
-pod 'zyFaceLiveness', :git => 'https://ZYTRUST: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@github.com/ZYTRUST/FaceLiveness.git', :tag => '6.3.3' 
-pod 'zyIdentyFaceIcaoLocal', :git => 'https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceIcaoLocal.git', :tag => '6.3.3' 
-pod 'zyIdentyFaceLocal', :git => 'https://ZYTRUST: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@github.com/ZYTRUST/IdentyFaceLocal.git', :tag => '6.3.3' 
-pod 'zy_lib_regula_ocr_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_regula_ocr_ios_protecta.git', :tag => '0.5.7' 
-pod 'zy_lib_zytrust_pdv_ios', :git => 'https://ZYTRUST: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@github.com/ZYTRUST/zy_lib_zytrust_pdv_ios.git', :tag => '0.2.1' 
+pod 'zy_multicompany_bio_lib_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_bio_lib_ios_protecta.git', :tag => '1.0.11'
+pod 'zy_multicompany_lib_ui_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_multicompany_lib_ui_ios_protecta.git', :tag => '1.0.5' 
+pod 'zy_lib_face_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_face_ios_protecta.git', :tag => '7.1.8' 
+pod 'zyIdentyFace', :git => 'https://ZY-IDENTY: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@github.com/ZY-IDENTY/IdentyFace.git', :tag => '7.1.2' 
+pod 'zyIdentyFaceLivenessLarge', :git => 'https://ZY-IDENTY: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@github.com/ZY-IDENTY/IdentyFaceLivenessLarge.git', :tag => '7.1.2' 
+pod 'zyIdentyFaceIcaoLocal', :git => 'https://ZY-IDENTY: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@github.com/ZY-IDENTY/IdentyFaceIcaoLocal.git', :tag => '7.1.2' 
+pod 'zyIdentyFaceLocal', :git => 'https://ZY-IDENTY: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@github.com/ZY-IDENTY/IdentyFaceLocal.git', :tag => '7.1.2' 
+pod 'zy_lib_regula_ocr_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_regula_ocr_ios_protecta.git', :tag => '0.5.7' 
+pod 'zy_lib_zytrust_pdv_ios_protecta', :git => 'https://ZY-PROTECTA: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@github.com/ZY-PROTECTA/zy_lib_zytrust_pdv_ios_protecta.git', :tag => '0.2.2' 
   # -----------------------------
+
 
   # ✅ FIX CORRECTO PARA FIREBASE / SWIFT PODS
   pod 'FirebaseCore', :modular_headers => true

@@ -28,7 +28,7 @@ export default function HomeScreen() {
   const [tiDocumento, setTiDocumento] = useState('');
   const [nuDocumento, setNuDocumento] = useState('');
   const [idFlujo, setIdFlujo] = useState(0);
-  const [ambiente, setAmbiente] = useState('POC');
+  const [ambiente, setAmbiente] = useState('DEVX');
   const [token, setToken] = useState('');
   const [manualToken, setManualToken] = useState('');
 
@@ -64,7 +64,7 @@ export default function HomeScreen() {
       let resolvedToken = token;
 
       switch (ambiente) {
-        case 'DEV2':
+        case 'DEV1':
           resolvedToken = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VDb3JyZW8iOiJKU0FFTloyQFpZVFJVU1QuQ09NIiwidXN1U3VjSWQiOjQ1NTEsInVzdUVtcHNJZCI6OTc4LCJ1c3VBcGxJZCI6MCwidXNlcl9uYW1lIjoiREVTQS1QVEEtU1EzLUFQSS1MTSIsInR1c3VJZCI6MSwidmVyc2lvbiI6IjIuMCIsInVzdUNvSW50ZXJubyI6IkRFU0EtUFRBLVNRMy1BUEktTE0iLCJhdXRob3JpdGllcyI6WyJ4MEY0TTI0eG9ZcXVYTkhlSFhMLzBCMDBDbnc9IiwiSmhQRXZuTmpGOGIwWDdtdjBNdjRVWWpVWGd3PSIsIlNLbWJCT2QvZWNoS3NZOGt4cGN4eXZJZG9YRT0iLCJlc2JYZVFPalJKOFlmZjVpMy9vclhKQkNMTUU9IiwicjZJRjV3UXNlZkFSRVVyajZEY0FYMCtUSWc4PSIsIjZJb0ZHQU9SSDNHcGUxYmlqdlB4MDY1bVlZUT0iLCJRNCtKUExnblJTRkVSZjJaN0cvdUdmYVlIcHc9Iiwick5ia3FvTDBSMlc4MysveDRaUUV4eUd1cXVBPSIsImFyclJjanorY3M1N3hNV1VLVndNN2lPayt5dz0iLCJ5NXQ5V0ZUaTcvUmFvK1lPTmI0YnJ4d0NhRWs9IiwiYlpoNUlGNXdHK0EzQ3Zxc1ZnT2VRN0FZd3U4PSJdLCJjbGllbnRfaWQiOiIyMDUxNzIwNzMzMSIsInVzdUlkIjo2MTc4LCJ1c3VQZXJJZCI6MCwic2NvcGUiOlsidHJ1c3QiLCJyZWFkIiwid3JpdGUiXSwidGlEb2NVc3VhcmlvIjo2LCJudURvY1VzdWFyaW8iOiIwMDAwMDAwMDAwIiwic3VjdURlc2NyaXBjaW9uIjoiUFJJTkNJUEFMIiwiZXhwIjoxOTI2NTE1NTYzLCJzdWN1Q29kaWdvIjoiMSIsImp0aSI6Ik1SZEVYcHdfMGVybWNjYlQ5SzE5MjBrOENwWSJ9.MPysi1AoZvGafN4cPTPiLIaCRFLKWJAFUrgYL7OQ5Pzv-_kUhxnqIsDlgnbgOPdTmrAko1YWLHpceqVDuwWOIFGWDN-Fkowo0NPupOXDbbQslppoY0Svgnflzx_02pfRV9Zbtfwx_D6cdTSWeeEjIMO4IoTvjsXobsD2OLwla3tw6d7pxUIRvvJdu07das2GO95cnQVrR5TAA_YW_mPgGWmSrqGB8schJp2kjgOocTb7dZh7oguNDGl3J4u9TsdYcjb9iZWlrmolV2lWqmoisWInVP24P27A1Sc0o431FFJbxH3zltxG1aT3Ftu58LxEUwC7ruA7cqgKUs8ZYsEo7w';
           break;
         case 'DEVX':
@@ -94,7 +94,7 @@ export default function HomeScreen() {
         accessToken: resolvedToken, // Access token generado por ambiente
         bioPais: 'PE', //Pais de verificacion (siempre PE)
         idFlujo: idFlujo, //Operacion
-        urlSource: ambiente // Ambiente a la conexion DEV2 , POC , DEVX , SIGN (PRODUCCION)
+        urlSource: ambiente // Ambiente a la conexion DEV1 , POC , DEVX , SIGN (PRODUCCION)
       };
 
       const result =
@@ -132,7 +132,7 @@ export default function HomeScreen() {
         resizeMode="contain"
       />
 
-      <Text style={styles.title}>{'SDK 1.1.15'}</Text>
+      <Text style={styles.title}>{'SDK 1.1.16'}</Text>
 
       <TextInput
         style={styles.input}
@@ -154,7 +154,7 @@ export default function HomeScreen() {
 
       <TextInput
         style={styles.input}
-        placeholder="Ambiente (DEFAULT POC) (DEV2, POC, DEVX, SIGN)"
+        placeholder="Ambiente (DEFAULT POC) (DEV1, POC, DEVX, SIGN)"
         value={ambiente}
         onChangeText={(text) => setAmbiente(text.toUpperCase())}
         autoCapitalize="characters"
